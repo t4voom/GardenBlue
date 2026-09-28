@@ -1,0 +1,13 @@
+{
+  "name": "garden-blue-ornamental",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional one-page da Garden Blue Ornamental — Flora e Paisagismo, Gaspar/SC. HTML/CSS/JS puros, sem build.",
+  "scripts": {
+    "start": "node ferramentas/servidor.js",
+    "setup": "npm --prefix ferramentas install",
+    "imagens": "node ferramentas/imagens.js",
+    "placeholders": "node ferramentas/placeholders.js",
+    "dominio": "node ferramentas/dominio.js"
+  }
+}

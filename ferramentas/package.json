@@ -1,0 +1,8 @@
+{
+  "name": "garden-blue-ferramentas",
+  "private": true,
+  "description": "Ferramentas locais do site (otimização de imagens). Não fazem parte do deploy.",
+  "devDependencies": {
+    "sharp": "0.25.4"
+  }
+}
