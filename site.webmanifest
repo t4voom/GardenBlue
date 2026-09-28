@@ -3,7 +3,7 @@
   "short_name": "Garden Blue",
   "description": "Flora e Paisagismo em Gaspar – SC",
   "lang": "pt-BR",
-  "start_url": "/",
+  "start_url": "./",
   "display": "browser",
   "background_color": "#FBF6EC",
   "theme_color": "#FBF6EC",

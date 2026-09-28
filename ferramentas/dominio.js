@@ -1,6 +1,7 @@
 // Troca o domínio do site (canonical, Open Graph, JSON-LD, robots.txt e sitemap.xml) de uma vez.
-//   npm run dominio -- https://gardenblue.com.br
-// Pode rodar de novo quando o domínio mudar (ex.: de *.vercel.app para o domínio próprio).
+//   npm run dominio -- https://usuario.github.io/garden-blue   (GitHub Pages)
+//   npm run dominio -- https://gardenblue.com.br              (domínio próprio)
+// Pode rodar de novo quando o endereço mudar.
 
 const fs = require('fs');
 const path = require('path');
@@ -9,8 +10,8 @@ const RAIZ = path.join(__dirname, '..');
 const ARQUIVOS = ['index.html', 'robots.txt', 'sitemap.xml'];
 const novo = (process.argv[2] || '').replace(/\/+$/, '');
 
-if (!/^https?:\/\/[^/\s]+$/.test(novo)) {
-  console.error('Uso: npm run dominio -- https://seu-dominio.com.br   (sem caminho no final)');
+if (!/^https?:\/\/[^/\s]+(\/\S*)?$/.test(novo)) {
+  console.error('Uso: npm run dominio -- https://usuario.github.io/garden-blue   (ou um domínio próprio)');
   process.exit(1);
 }
 

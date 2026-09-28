@@ -1,4 +1,4 @@
-# Garden Blue Ornamental: site one-page
+﻿# Garden Blue Ornamental: site one-page
 
 Site institucional da **Garden Blue Ornamental** (Flora e Paisagismo, Gaspar/SC), feito em HTML, CSS e JavaScript puros. Não tem build nem backend: a pasta inteira já é o site.
 
@@ -21,18 +21,25 @@ npm start
 
 Depois é só abrir http://localhost:5173. Dá também para abrir o `index.html` direto no navegador.
 
-## Publicar
+## Publicar no GitHub Pages
 
-**Vercel:** importe a pasta ou o repositório em vercel.com/new e escolha o framework **Other**, deixando o build vazio. Pela linha de comando: `npx vercel`.
-**Netlify:** arraste a pasta para app.netlify.com/drop. Se preferir conectar o repositório, use *publish directory* `.` e deixe o build vazio.
+O `index.html` fica na raiz do repositório e todos os caminhos são relativos, então o site funciona em `https://usuario.github.io/nome-do-repo/`. O arquivo `.nojekyll` faz o GitHub servir os arquivos como estão, sem processar com o Jekyll.
 
-Com o endereço definitivo em mãos (ex.: `https://gardenblue.vercel.app` ou o domínio próprio), rode o comando abaixo e publique de novo:
+1. Envie o projeto com Git. O upload pelo site do GitHub aceita no máximo 100 arquivos por vez, e este projeto tem cerca de 150.
+   ```bash
+   git remote add origin https://github.com/SEU-USUARIO/garden-blue.git
+   git push -u origin main
+   ```
+2. No repositório, abra **Settings → Pages** e escolha **Source: Deploy from a branch**, **Branch: `main`**, pasta **`/ (root)`**. Depois clique em **Save**.
+3. Em 1 ou 2 minutos o site sai em `https://SEU-USUARIO.github.io/garden-blue/`. Com esse endereço, rode o comando abaixo, faça um commit e dê push de novo:
 
 ```bash
-npm run dominio -- https://SEU-ENDERECO-AQUI
+npm run dominio -- https://SEU-USUARIO.github.io/garden-blue
 ```
 
-Ele atualiza o canonical, o Open Graph (a prévia no WhatsApp precisa de URL absoluta), o JSON-LD, o `robots.txt` e o `sitemap.xml`.
+Ele atualiza o canonical, o Open Graph (a prévia no WhatsApp precisa de URL absoluta), o JSON-LD, o `robots.txt` e o `sitemap.xml`. Se depois houver um domínio próprio, basta rodar de novo com ele.
+
+O site também funciona sem mudanças na Vercel ou na Netlify (build vazio, pasta raiz).
 
 ## Trocar as fotos
 
@@ -92,4 +99,4 @@ Se trocar a foto de alguma galeria ou card por outra com conteúdo diferente, at
   - celular: Performance 99, Acessibilidade 100, Boas práticas 100, SEO 93;
   - desktop: 99, 100, 100 e 92.
 
-  O SEO perde pontos só pelo canonical provisório; com o domínio configurado, deu 100. Os avisos de compressão e HTTP/2 somem na Vercel ou na Netlify. Com as fotos reais, que pesam mais, vale medir de novo no PageSpeed Insights depois de publicar.
+  O SEO perde pontos só pelo canonical provisório; com o domínio configurado, deu 100. Os avisos de compressão e HTTP/2 somem no GitHub Pages, na Vercel ou na Netlify. Com as fotos reais, que pesam mais, vale medir de novo no PageSpeed Insights depois de publicar.
